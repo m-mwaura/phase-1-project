@@ -34,7 +34,7 @@ async function fetchLifeStyle() { //fetches news from the life and style section
     }
     
 }
-//function displays dates on article
+//function for formating the date display
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { year: 'numeric', month: 'long', day: 'numeric'};
