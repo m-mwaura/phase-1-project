@@ -5,7 +5,7 @@ const newsContainer = document.getElementById('newsContainer');
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const homeButton = document.getElementById('homeButton');
-const lifeAndStyle = document.getElementById('lifeAndStyle');
+const lifeStyle = document.getElementById('lifeStyle');
 const filterContainer = document.getElementById('filterContainer');
 //fetch news using a search query to filter content
 async function fetchNews(query = '') {
@@ -20,21 +20,8 @@ async function fetchNews(query = '') {
         console.error('Error fetching data:', error);
     } 
 }
-//fetch life and style news function
-async function fetchLifeStyle() { //fetches news from the life and style section of the guardian website
-    const url = 'https://content.guardianapis.com/lifeandstyle?api-key=${apiKey}&show-fields=all`';
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        displayNews(data.response.results);
-
-    } catch (error) {
-        console.error('error fetching data:' , error);
-    }
-    
-}
-//function for formating the date display
+//function display date based format
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { year: 'numeric', month: 'long', day: 'numeric'};
@@ -114,7 +101,7 @@ homeButton.addEventListener('click', () => {
 });
 
 function renderFilterOptions() {
-    const categories = ['Life and Style', 'Sport', 'Politics', 'Business'];
+    const categories = ['Life Style', 'Sport', 'Politics', 'Business'];
 
     categories.forEach(category => {
         const filterOption = document.createElement('button');
