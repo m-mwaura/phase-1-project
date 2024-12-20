@@ -4,9 +4,8 @@
 
 **##OVERVIEW**
 
-This project fetches and displays news articles from The Guardian API based on various user inputs.
+This project fetches and displays news articles from the guardian api allowing users to search for specific topics, view news categories and filter content based on various categories like lifestyle, sports, politics and business
 
-The main feature of this application is the ability to search for news by keywords, filter news by category and view articles along with their images, publication dates, tags and content snippets
 
 **##Features**
 
@@ -37,6 +36,9 @@ News articles are fetched using a search query or category filter.
 
 **2. DOM Manipulation**
 
+
+![Screenshot from 2024-12-20 21-10-27](https://github.com/user-attachments/assets/3192f334-1689-452e-8a5f-d027495bc473)
+
 The Dom elements are dynamically created and manipulated to display news articles. the main elements include:
 
 newsContainer - where the news articles are displayed.
@@ -49,86 +51,51 @@ homeButton - button to reset the search and show all news.
 
 filterContainer - container for the category filter buttons.
 
-**3. Fetching News:**
+**3. Functions:**
 
-**Search News:**
+**fetchNews(query = '')**
 
-The fetchNews(query) function fetches news based on a search query.
+![Screenshot from 2024-12-20 21-43-30](https://github.com/user-attachments/assets/41ba9971-59fd-4ee1-8fd0-a1b3d3fcce24)
 
-**life style news:** 
+this asynchronous function fetches news articles from the guardian api using a search query.it handles the response and calls displayNews() to show results.
 
-The fetchLifeStyle() function specifically fetches news from the Life and Style section.
+**formatDate(dateString)**
 
-**General News**
+![Screenshot from 2024-12-20 21-44-33](https://github.com/user-attachments/assets/aa9bb36d-553b-4301-a3a1-bd9a5d4fb274)
 
-The fetchNews function fetches general news based on the query provided.
+this function takes a date string from the api response and formats it to a more readable format.
 
-**4. Display News**
+**displayNews(newsItems)**
 
-The displayNews(newsItems) function process the data and generates HTML to display each news article.
-Each article includes:
+this function processes and displays the fetched news articles. it creates html elements for each article including an image, title, publication date, tags and a read more link.
 
-Image - A thumbnail image if available.
+**renderFilterOptions()**
 
-Title - The articles title.
-
-Date - The publication date, formatted as "month, day, year".
-
-Tags - If any tags are available for the article.
-
-Snippet - A short preview of the articles content.
-
-Read more - A link that redirects the user to the full article on the guardian website.
-
-**5. Filter Options**
-
-The renderFilterOptions() function dynamically generates filter buttons for different categories like
-life and style, sport, politics, business.
-
-clicking on a category button fetches and displays news from that section.
+this function creates filter buttons for different categories eg life style, sport, politics, when clicked each button triggers a search query for the corresponding category.
 
 
-**#HOW TO USE**
+**##Event Listeners**
 
-**1. Search for news** 
+![Screenshot from 2024-12-20 21-41-41](https://github.com/user-attachments/assets/44922008-8cdd-4f0b-a797-7366e75aa5d1)
 
-Type a search term in the search input field and click the "search button". the website will fetch and display articles related to your query.
+**Search button**
 
-**2. Category filters**
+![Screenshot from 2024-12-20 21-39-49](https://github.com/user-attachments/assets/6fe7d947-df6d-465d-8d79-84bed49d74e5)
 
-Click on a category button eg sports to view articles from that section.
+when a user clicks the search button, it triggers the fetchNews() function with the entered search query
 
-**3. View full article**
+**Home button**
 
-For each article you click on the read more link to open the full article on the guardian website
+when the user clicks the home button it clears the search input and fetches the default news.
 
-**4. Reset home**
+**Page initialization**
 
-Click the home button to clear the search input and return toviewing general news.
+![Screenshot from 2024-12-20 21-36-12](https://github.com/user-attachments/assets/9059bcb1-eef0-479b-ade0-1cf9e0e2d049)
+
+the filter options are rendered on page load and news are fetched by default when the page loads
 
 
-**##Code structures**
 
-**Global Variables**
 
-Contains the API key and references to DOM elements to interact with.
 
-**fetchNews function**
 
-Makes the API request to fetch news articles based on a query
-
-**fetchLifeStyle function**
-
-fetches news from the guardians life style section
-
-**displayNews function**
-
-Dynamically creates html to display the fetched news articles
-
-**formDate function**
-
-Formats the dates of the articles into a readable format
-
-**renderFilterOptions function**
-
-Renders category filter buttons
