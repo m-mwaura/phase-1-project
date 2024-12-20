@@ -1,4 +1,4 @@
-![Screenshot from 2024-12-19 19-01-01](https://github.com/user-attachments/assets/f62f100f-8e69-4ced-9ad0-20feb3bef8c4)
+![Screenshot from 2024-12-20 20-22-32](https://github.com/user-attachments/assets/4e1399e2-c8d9-4662-8bc2-d027b876f987)
 
 **#THE GUARDIAN - WORKING THE API**
 
@@ -55,7 +55,7 @@ filterContainer - container for the category filter buttons.
 
 The fetchNews(query) function fetches news based on a search query.
 
-**life and style news:** 
+**life style news:** 
 
 The fetchLifeStyle() function specifically fetches news from the Life and Style section.
 
@@ -119,7 +119,7 @@ Makes the API request to fetch news articles based on a query
 
 **fetchLifeStyle function**
 
-fetches news from the guardians life and style section
+fetches news from the guardians life style section
 
 **displayNews function**
 
